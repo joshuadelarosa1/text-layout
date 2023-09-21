@@ -18,7 +18,20 @@ public class TBExpt {
     // Prepare for input and output
     PrintWriter pen = new PrintWriter(System.out, true);
 
-    TextBlock block = new TextLine("hello");
+    TextLine blockLine = new TextLine("hello world");
+
+    TextBlock block = blockLine;
+    TBUtils.print(pen, block);
+
+    Truncated truncatedBlock = new Truncated(block, 5);
+    TBUtils.print(pen, truncatedBlock);
+
+    BoxedBlock box = new BoxedBlock(block);
+    pen.println("width of regular box " + box.width());
+    TBUtils.print(pen, box);
+
+    Truncated truncatedBox = new Truncated(box, 5);
+    TBUtils.print(pen, truncatedBox); 
 
     // Clean up after ourselves.
     pen.close();
