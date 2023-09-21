@@ -1,7 +1,6 @@
 package lab.polymorphism;
 
 import java.io.PrintWriter;
-import org.w3c.dom.Text;
 
 /**
  * A series of experiments with the text block layout classes.
