@@ -26,12 +26,17 @@ public class TBExpt {
     TBUtils.print(pen, truncatedBlock);
 
     BoxedBlock box = new BoxedBlock(block);
-    pen.println("width of regular box " + box.width());
     TBUtils.print(pen, box);
 
     Truncated truncatedBox = new Truncated(box, 5);
     TBUtils.print(pen, truncatedBox); 
 
+    Centered centeredBox = new Centered(box, 21);
+    TBUtils.print(pen, centeredBox);
+
+    BoxedBlock centeredTest = new BoxedBlock(new Centered(block, 21));
+    TBUtils.print(pen, centeredTest);
+  
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

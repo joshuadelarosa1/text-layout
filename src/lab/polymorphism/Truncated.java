@@ -44,14 +44,14 @@ public class Truncated implements TextBlock{
    */
   public int height(){
     return this.block.height();
-  }
+  } // height()
 
   /**
    * returns the width of the block
    */
   public int width(){
-    return this.block.width();
-  }
+    return this.width;
+  } // width()
 
   /**
    * @pre 0 < i < this.height
@@ -71,7 +71,6 @@ public class Truncated implements TextBlock{
     }
 
     return result;
-  }
-
+  } // row(int i)
 
 } // class Truncated
