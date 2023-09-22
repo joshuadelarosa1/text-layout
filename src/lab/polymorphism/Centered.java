@@ -45,7 +45,7 @@ public class Centered implements TextBlock {
     int thisW = this.width;
     int thisBW = this.block.width();
 
-    if (i > this.height() || i < 0) {
+    if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
     }
 
@@ -55,7 +55,7 @@ public class Centered implements TextBlock {
       Truncated centerTruncated = new Truncated(this.block, thisW);
       result = centerTruncated.row(i);
     } else {
-      if (((thisW - thisBW) % 2) == 0){
+      if (((thisW - thisBW) % 2) == 0) {
         result = TBUtils.spaces((thisW - thisBW) / 2) + this.block.row(i);
         result = result + TBUtils.spaces((thisW - thisBW) / 2);
       } else {

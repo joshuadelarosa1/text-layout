@@ -1,16 +1,12 @@
 package lab.polymorphism;
 
-import java.io.PrintWriter;
-
 /**
- * Truncates inputed text blocks
+ * Right Justifies inputed text blocks
  * 
  * @author Joshua De La Rosa
  * @version 1 of September 20th, 2023
  */
-public class Truncated implements TextBlock {
-
-  PrintWriter pen = new PrintWriter(System.out, true);
+public class RightJustified implements TextBlock {
 
   // +--------+------------------------------------------------------------
   // | Fields |
@@ -19,6 +15,7 @@ public class Truncated implements TextBlock {
   /**
    * the text block
    */
+
   TextBlock block;
 
   /**
@@ -30,7 +27,7 @@ public class Truncated implements TextBlock {
   // | Constructors |
   // +--------------+
 
-  public Truncated(TextBlock block, int width) {
+  public RightJustified(TextBlock block, int width) {
     this.block = block;
     this.width = width;
   }
@@ -40,37 +37,34 @@ public class Truncated implements TextBlock {
   // +---------+
 
   /**
-   * returns the height of the block
-   */
-  public int height() {
-    return this.block.height();
-  } // height()
-
-  /**
-   * returns the width of the block
-   */
-  public int width() {
-    return this.width;
-  } // width()
-
-  /**
-   * @pre 0 < i < this.height
-   * @exception if row i is larger than width or height
+   * Get one row from the block.
+   * 
+   * @pre i < this.height()
+   * @exception Exception if the row number is invalid.
    */
   public String row(int i) throws Exception {
+
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
     }
 
-    String result;
-
-    if (this.block.width() <= this.width) {
-      result = this.block.row(i);
-    } else {
-      result = this.block.row(i).substring(0, this.width);
-    }
+    String result = "not implemented";
 
     return result;
-  } // row(int i)
+  }
 
-} // class Truncated
+  /**
+   * Determine how many rows are in the block.
+   */
+  public int height() {
+    return this.block.height();
+  }
+
+  /**
+   * Determine how many columns are in the block.
+   */
+  public int width() {
+    return this.width;
+  }
+
+}
