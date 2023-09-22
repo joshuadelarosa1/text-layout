@@ -43,12 +43,21 @@ public class RightJustified implements TextBlock {
    * @exception Exception if the row number is invalid.
    */
   public String row(int i) throws Exception {
+    int thisW = this.width;
+    int thisBW = this.block.width();
 
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
     }
 
-    String result = "not implemented";
+    String result;
+
+    if (thisBW > thisW) {
+      Truncated centerTruncated = new Truncated(this.block, thisW);
+      result = centerTruncated.row(i);
+    } else {
+      result = TBUtils.spaces(thisW - thisBW) + this.block.row(i);
+    }
 
     return result;
   }
