@@ -44,6 +44,12 @@ public class TBExpt {
     BoxedBlock boxJustified = new BoxedBlock(lineJustified);
     TBUtils.print(pen, boxJustified);
 
+    HorizontallyFlipped boxFlipped = new HorizontallyFlipped(box);
+    TBUtils.print(pen, boxFlipped);
+
+    HorizontallyFlipped justHFText = new HorizontallyFlipped(blockLine);
+    TBUtils.print(pen, justHFText);
+
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

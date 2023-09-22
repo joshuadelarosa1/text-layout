@@ -7,18 +7,12 @@ public class HorizontallyFlipped implements TextBlock {
   // +--------+
 
   /**
-   * The left portion of the composition.
+   * the text block
    */
-  TextBlock left;
+  TextBlock block;
 
-  /**
-   * The right portion of the composition.
-   */
-  TextBlock right;
-
-  public HorizontallyFlipped(TextBlock left, TextBlock right) {
-    this.left = left;
-    this.right = right;
+  public HorizontallyFlipped(TextBlock block) {
+    this.block = block;
   }
 
   // +---------+-----------------------------------------------------------
@@ -33,19 +27,31 @@ public class HorizontallyFlipped implements TextBlock {
    */
   public String row(int i) throws Exception {
 
+    if (i > this.block.height() || i < 0) {
+      throw new Exception("Invalid row larger than height " + i);
+    }
+
+    String result = "";
+
+    for(int k = this.block.row(i).length() - 1; k >= 0; k--){
+      char currentCH = this.block.row(i).charAt(k);
+      result = result + String.valueOf(currentCH);
+    }
+
+    return result;
   }
 
   /**
    * Determine how many rows are in the block.
    */
   public int height() {
-
+    return this.block.height();
   }
 
   /**
    * Determine how many columns are in the block.
    */
   public int width() {
-
+    return this.block.width();
   }
 } // class HorizontallyFlipped

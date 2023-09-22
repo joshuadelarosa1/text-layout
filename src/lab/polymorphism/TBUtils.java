@@ -42,6 +42,27 @@ public class TBUtils {
   } // dashes(int)
 
   /**
+   * Returns true if two textblocks contain the same lines
+   */
+  static boolean equal(TextBlock t1, TextBlock t2) {
+    return true;
+  } // equal(TextBlock t1, TextBlock t2)
+
+  /**
+  * Returns true if two textblocks are built the same way
+  */
+  static boolean eqv(TextBlock t1, TextBlock t2){
+    return true;
+  }
+
+  /**
+  * Returns true if two textblocks are in the same memory location
+  */
+  static boolean eq(TextBlock t1, TextBlock t2){
+    return t1 == t2;
+  }
+
+  /**
    * Print a TextBlock to the specified destination.
    */
   public static void print(PrintWriter pen, TextBlock block) {
