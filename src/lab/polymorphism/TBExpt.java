@@ -61,6 +61,11 @@ public class TBExpt {
     VerticallyFlipped heyByeBoxTest = new VerticallyFlipped(heyByeBox);
     TBUtils.print(pen, heyByeBoxTest);
 
+    HorizontallyFlipped equalTest = new HorizontallyFlipped(blockLine);
+    HorizontallyFlipped equalTest2 = new HorizontallyFlipped(equalTest);
+    pen.println("Result is " + TBUtils.equal(equalTest2, blockLine));
+    pen.println("Result is " + TBUtils.equal(equalTest, equalTest2));
+
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

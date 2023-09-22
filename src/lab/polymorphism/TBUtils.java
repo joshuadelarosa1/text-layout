@@ -43,9 +43,41 @@ public class TBUtils {
 
   /**
    * Returns true if two textblocks contain the same lines
+   * 
+   * @throws Exception
    */
-  static boolean equal(TextBlock t1, TextBlock t2) {
-    return true;
+  static boolean equal(TextBlock t1, TextBlock t2) throws Exception {
+
+    String resultT1 = "";
+    String resultT2 = "";
+
+    for (int i = 0; i < t1.height(); i++) {
+      for (int j = 0; j < t1.row(i).length(); j++) {
+        if (!(Character.isAlphabetic(t1.row(i).charAt(j)))) {
+          continue;
+        } else {
+          char currentCH = t1.row(i).charAt(j);
+          resultT1 = resultT1 + String.valueOf(currentCH);
+        }
+      }
+    }
+
+    for (int i = 0; i < t2.height(); i++) {
+      for (int j = 0; j < t2.row(i).length(); j++) {
+        if (!(Character.isAlphabetic(t2.row(i).charAt(j)))) {
+          continue;
+        } else {
+          char currentCH = t2.row(i).charAt(j);
+          resultT2 = resultT2 + String.valueOf(currentCH);
+        }
+      }
+    }
+
+    if (resultT1.equals(resultT2)) {
+      return true;
+    } else {
+      return false;
+    }
   } // equal(TextBlock t1, TextBlock t2)
 
   /**
@@ -53,14 +85,14 @@ public class TBUtils {
    */
   static boolean eqv(TextBlock t1, TextBlock t2) {
     return true;
-  }
+  } // eq(TextBlock t1, TextBlock t2)
 
   /**
    * Returns true if two textblocks are in the same memory location
    */
   static boolean eq(TextBlock t1, TextBlock t2) {
     return t1 == t2;
-  }
+  } // eq(TextBlock t1, TextBlock t2)
 
   /**
    * Print a TextBlock to the specified destination.
