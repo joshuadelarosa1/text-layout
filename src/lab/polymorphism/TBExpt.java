@@ -63,8 +63,11 @@ public class TBExpt {
 
     HorizontallyFlipped equalTest = new HorizontallyFlipped(blockLine);
     HorizontallyFlipped equalTest2 = new HorizontallyFlipped(equalTest);
-    pen.println("Result is " + TBUtils.equal(equalTest2, blockLine));
-    pen.println("Result is " + TBUtils.equal(equalTest, equalTest2));
+    pen.println("Result for equal 1 is " + TBUtils.equal(equalTest2, blockLine));
+    pen.println("Result for equal 2 is " + TBUtils.equal(equalTest, equalTest2));
+
+    pen.println("Result for eq 1 is " + TBUtils.eq(equalTest, equalTest));
+    pen.println("Result for eq 2 is " + TBUtils.eq(equalTest, equalTest2));
 
     // Clean up after ourselves.
     pen.close();
