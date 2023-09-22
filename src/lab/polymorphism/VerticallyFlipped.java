@@ -33,7 +33,16 @@ public class VerticallyFlipped implements TextBlock {
    * @exception Exception if the row number is invalid.
    */
   public String row(int i) throws Exception {
-    return "";
+
+    int factor = this.block.height() - 1;
+
+    if (i > this.height() || i < 0) {
+      throw new Exception("Invalid row larger than height " + i);
+    }
+
+    String result = this.block.row(factor - i);
+
+    return result;
   } // row(int i)
 
   /**

@@ -49,16 +49,16 @@ public class TBUtils {
   } // equal(TextBlock t1, TextBlock t2)
 
   /**
-  * Returns true if two textblocks are built the same way
-  */
-  static boolean eqv(TextBlock t1, TextBlock t2){
+   * Returns true if two textblocks are built the same way
+   */
+  static boolean eqv(TextBlock t1, TextBlock t2) {
     return true;
   }
 
   /**
-  * Returns true if two textblocks are in the same memory location
-  */
-  static boolean eq(TextBlock t1, TextBlock t2){
+   * Returns true if two textblocks are in the same memory location
+   */
+  static boolean eq(TextBlock t1, TextBlock t2) {
     return t1 == t2;
   }
 
@@ -89,5 +89,14 @@ public class TBUtils {
     // Extract an appropriate length substring
     return lotsOfSpaces.substring(0, len);
   } // spaces(int)
+
+  /**
+   * Converts a block to a string
+   */
+  static String toString(TextBlock block) {
+    String result = "not implemented yet";
+
+    return result;
+  }
 
 } // class TBUtils

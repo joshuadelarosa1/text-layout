@@ -50,6 +50,17 @@ public class TBExpt {
     HorizontallyFlipped justHFText = new HorizontallyFlipped(blockLine);
     TBUtils.print(pen, justHFText);
 
+    TextLine hello = new TextLine("hello");
+    TextLine goodbye = new TextLine("goodbye");
+    VComposition heyBye = new VComposition(hello, goodbye);
+
+    VerticallyFlipped justVFText = new VerticallyFlipped(heyBye);
+    TBUtils.print(pen, justVFText);
+
+    BoxedBlock heyByeBox = new BoxedBlock(heyBye);
+    VerticallyFlipped heyByeBoxTest = new VerticallyFlipped(heyByeBox);
+    TBUtils.print(pen, heyByeBoxTest);
+
     // Clean up after ourselves.
     pen.close();
   } // main(String[])
