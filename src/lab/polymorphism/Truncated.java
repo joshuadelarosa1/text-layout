@@ -30,10 +30,13 @@ public class Truncated implements TextBlock {
   // | Constructors |
   // +--------------+
 
+  /**
+   * Builds a new block by truncating the previous block.
+   */
   public Truncated(TextBlock block, int width) {
     this.block = block;
     this.width = width;
-  }
+  } // Truncated(TextBlock block, int width)
 
   // +---------+-----------------------------------------------------------
   // | Methods |

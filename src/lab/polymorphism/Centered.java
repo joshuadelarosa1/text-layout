@@ -26,6 +26,9 @@ public class Centered implements TextBlock {
   // | Constructors |
   // +--------------+
 
+  /**
+   * Build a new block by centering it.
+   */
   public Centered(TextBlock block, int width) {
     this.block = block;
     this.width = width;
@@ -62,7 +65,7 @@ public class Centered implements TextBlock {
         result = TBUtils.spaces((Math.round((thisW - thisBW) / 2)) + 1) + this.block.row(i);
         result = result + TBUtils.spaces(Math.round((thisW - thisBW) / 2));
       }
-    }
+    } // row(int i)
 
     return result;
   } // row(int i)

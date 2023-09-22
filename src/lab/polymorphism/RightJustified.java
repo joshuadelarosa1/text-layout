@@ -27,10 +27,13 @@ public class RightJustified implements TextBlock {
   // | Constructors |
   // +--------------+
 
+  /**
+   * Build a new block by right justifying it.
+   */
   public RightJustified(TextBlock block, int width) {
     this.block = block;
     this.width = width;
-  }
+  } // RightJustified(TextBlock block, int width)
 
   // +---------+-----------------------------------------------------------
   // | Methods |
@@ -60,20 +63,20 @@ public class RightJustified implements TextBlock {
     }
 
     return result;
-  }
+  } // row(int i)
 
   /**
    * Determine how many rows are in the block.
    */
   public int height() {
     return this.block.height();
-  }
+  } // height()
 
   /**
    * Determine how many columns are in the block.
    */
   public int width() {
     return this.width;
-  }
+  } // width()
 
-}
+} // class RightJustified
