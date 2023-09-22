@@ -6,8 +6,8 @@ package lab.polymorphism;
  * @author Joshua De La Rosa
  * @version 1, September 21st, 2023
  */
-public class Centered implements TextBlock{
- 
+public class Centered implements TextBlock {
+
   // +--------+------------------------------------------------------------
   // | Fields |
   // +--------+
@@ -18,7 +18,7 @@ public class Centered implements TextBlock{
   TextBlock block;
 
   /**
-   *  the width of the text block 
+   * the width of the text block
    */
   int width;
 
@@ -26,7 +26,7 @@ public class Centered implements TextBlock{
   // | Constructors |
   // +--------------+
 
-  public Centered(TextBlock block, int width){
+  public Centered(TextBlock block, int width) {
     this.block = block;
     this.width = width;
   } // Centered(TextBlock block, int width)
@@ -41,22 +41,27 @@ public class Centered implements TextBlock{
    * @pre i < this.height()
    * @exception Exception if the row number is invalid.
    */
-  public String row(int i) throws Exception{
-    if(i > this.height() || i < 0){
+  public String row(int i) throws Exception {
+    int thisW = this.width;
+    int thisBW = this.block.width();
+
+    if (i > this.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
     }
 
     String result;
 
-    if(i < this.width){
-      result = TBUtils.spaces(this.width / 2) + this.block.row(i);
-    } else{
-      result = this.block.row(i) + TBUtils.spaces(this.width / 2);
-    }
-
-    if(this.block.width() > this.width){
-      Truncated centerTruncated = new Truncated(this.block, this.width);
+    if (thisBW > thisW) {
+      Truncated centerTruncated = new Truncated(this.block, thisW);
       result = centerTruncated.row(i);
+    } else {
+      if (((thisW - thisBW) % 2) == 0){
+        result = TBUtils.spaces((thisW - thisBW) / 2) + this.block.row(i);
+        result = result + TBUtils.spaces((thisW - thisBW) / 2);
+      } else {
+        result = TBUtils.spaces((Math.round((thisW - thisBW) / 2)) + 1) + this.block.row(i);
+        result = result + TBUtils.spaces(Math.round((thisW - thisBW) / 2));
+      }
     }
 
     return result;
@@ -65,14 +70,14 @@ public class Centered implements TextBlock{
   /**
    * Determine how many rows are in the block.
    */
-  public int height(){
+  public int height() {
     return this.block.height();
   } // height()
 
   /**
    * Determine how many columns are in the block.
    */
-  public int width(){
+  public int width() {
     return this.width;
   } // width()
 

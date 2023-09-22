@@ -8,7 +8,7 @@ import java.io.PrintWriter;
  * @author Joshua De La Rosa
  * @version 1 of September 20th, 2023
  */
-public class Truncated implements TextBlock{
+public class Truncated implements TextBlock {
 
   PrintWriter pen = new PrintWriter(System.out, true);
 
@@ -22,7 +22,7 @@ public class Truncated implements TextBlock{
   TextBlock block;
 
   /**
-   *  the width of the text block 
+   * the width of the text block
    */
   int width;
 
@@ -30,7 +30,7 @@ public class Truncated implements TextBlock{
   // | Constructors |
   // +--------------+
 
-  public Truncated(TextBlock block, int width){
+  public Truncated(TextBlock block, int width) {
     this.block = block;
     this.width = width;
   }
@@ -42,14 +42,14 @@ public class Truncated implements TextBlock{
   /**
    * returns the height of the block
    */
-  public int height(){
+  public int height() {
     return this.block.height();
   } // height()
 
   /**
    * returns the width of the block
    */
-  public int width(){
+  public int width() {
     return this.width;
   } // width()
 
@@ -57,16 +57,16 @@ public class Truncated implements TextBlock{
    * @pre 0 < i < this.height
    * @exception if row i is larger than width or height
    */
-  public String row(int i) throws Exception{
-    if(i > this.height() || i < 0){
+  public String row(int i) throws Exception {
+    if (i > this.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
     }
 
     String result;
 
-    if(this.block.width() <= this.width){
+    if (this.block.width() <= this.width) {
       result = this.block.row(i);
-    } else{
+    } else {
       result = this.block.row(i).substring(0, this.width);
     }
 
