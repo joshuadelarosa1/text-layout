@@ -11,9 +11,12 @@ public class HorizontallyFlipped implements TextBlock {
    */
   TextBlock block;
 
+  /**
+   * Creates a new text block that is horiztonally flipped
+   */
   public HorizontallyFlipped(TextBlock block) {
     this.block = block;
-  }
+  } // HoriztonallyFlipped(TextBlock block)
 
   // +---------+-----------------------------------------------------------
   // | Methods |
@@ -33,25 +36,26 @@ public class HorizontallyFlipped implements TextBlock {
 
     String result = "";
 
-    for(int k = this.block.row(i).length() - 1; k >= 0; k--){
+    for (int k = this.block.row(i).length() - 1; k >= 0; k--) {
       char currentCH = this.block.row(i).charAt(k);
       result = result + String.valueOf(currentCH);
     }
 
     return result;
-  }
+  } // row(int i)
 
   /**
    * Determine how many rows are in the block.
    */
   public int height() {
     return this.block.height();
-  }
+  } // height()
 
   /**
    * Determine how many columns are in the block.
    */
   public int width() {
     return this.block.width();
-  }
+  } // width()
+
 } // class HorizontallyFlipped
