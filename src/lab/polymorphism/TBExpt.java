@@ -69,6 +69,9 @@ public class TBExpt {
     pen.println("Result for eq 1 is " + TBUtils.eq(equalTest, equalTest));
     pen.println("Result for eq 2 is " + TBUtils.eq(equalTest, equalTest2));
 
+    BlockOfZeros zeroBlock = new BlockOfZeros(box);
+    TBUtils.print(pen, zeroBlock);
+
     // Clean up after ourselves.
     pen.close();
   } // main(String[])
