@@ -62,8 +62,8 @@ public class Centered implements TextBlock {
       } else {
         result = TBUtils.spaces((Math.round((thisW - thisBW) / 2)) + 1) + this.block.row(i);
         result = result + TBUtils.spaces(Math.round((thisW - thisBW) / 2));
-      }
-    } // row(int i)
+      } // if... else
+    } // if... else
 
     return result;
   } // row(int i)

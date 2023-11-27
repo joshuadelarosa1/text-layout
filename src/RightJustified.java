@@ -48,7 +48,7 @@ public class RightJustified implements TextBlock {
 
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
-    }
+    } // if
 
     String result;
 
@@ -57,7 +57,7 @@ public class RightJustified implements TextBlock {
       result = centerTruncated.row(i);
     } else {
       result = TBUtils.spaces(thisW - thisBW) + this.block.row(i);
-    }
+    } // if... else
 
     return result;
   } // row(int i)

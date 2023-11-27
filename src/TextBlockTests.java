@@ -6,4 +6,4 @@
  */
 public class TextBlockTests {
   
-}
+} // class TextBlockTests

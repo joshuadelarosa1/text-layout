@@ -61,7 +61,7 @@ public class Truncated implements TextBlock {
   public String row(int i) throws Exception {
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
-    }
+    } // if
 
     String result;
 
@@ -69,7 +69,7 @@ public class Truncated implements TextBlock {
       result = this.block.row(i);
     } else {
       result = this.block.row(i).substring(0, this.width);
-    }
+    } // if... else
 
     return result;
   } // row(int i)

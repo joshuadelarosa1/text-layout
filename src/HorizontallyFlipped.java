@@ -36,14 +36,14 @@ public class HorizontallyFlipped implements TextBlock {
 
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
-    }
+    } // if
 
     String result = "";
 
     for (int k = this.block.row(i).length() - 1; k >= 0; k--) {
       char currentCH = this.block.row(i).charAt(k);
       result = result + String.valueOf(currentCH);
-    }
+    } // for
 
     return result;
   } // row(int i)

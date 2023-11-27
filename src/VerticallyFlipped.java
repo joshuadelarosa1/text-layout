@@ -42,7 +42,7 @@ public class VerticallyFlipped implements TextBlock {
 
     if (i > this.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
-    }
+    } // if
 
     String result = this.block.row(factor - i);
 
