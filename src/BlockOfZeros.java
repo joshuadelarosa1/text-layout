@@ -37,21 +37,22 @@ public class BlockOfZeros implements TextBlock {
 
     if (i > this.block.height() || i < 0) {
       throw new Exception("Invalid row larger than height " + i);
-    }
+    } // if
 
     String result = "";
 
     if (this.block.height() == 1) {
       return this.block.row(i);
-    }
+    } // if
 
     for (int j = 0; j < this.block.row(i).length(); j++) {
-      if (!(Character.isAlphabetic(this.block.row(i).charAt(j)))) {
+      if (!(Character.isAlphabetic(this.block.row(i).charAt(j)))
+          && !(Character.isWhitespace(this.block.row(i).charAt(j)))) {
         result = result + "0";
       } else {
         result = result + this.block.row(i).charAt(j);
-      }
-    }
+      } // if... else
+    } // for
 
     return result;
   }

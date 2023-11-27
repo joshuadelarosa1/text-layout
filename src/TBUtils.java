@@ -3,8 +3,8 @@ import java.io.PrintWriter;
 /**
  * Utilities for TextBlocks.
  * 
- * @author Samuel A. Rebelsky
- * @version 1.3 of September 2014
+ * @author Samuel A. Rebelsky, Joshua De La Rosa
+ * @version 2 of Nov 26, 2023
  */
 public class TBUtils {
   // +--------------+------------------------------------------------------
@@ -56,9 +56,9 @@ public class TBUtils {
         } else {
           char currentCH = t1.row(i).charAt(j);
           resultT1 = resultT1 + String.valueOf(currentCH);
-        }
-      }
-    }
+        } // if... else
+      } // for
+    } // for
 
     for (int i = 0; i < t2.height(); i++) {
       for (int j = 0; j < t2.row(i).length(); j++) {
@@ -67,23 +67,23 @@ public class TBUtils {
         } else {
           char currentCH = t2.row(i).charAt(j);
           resultT2 = resultT2 + String.valueOf(currentCH);
-        }
-      }
-    }
+        } // if... else
+      } // for
+    } // for
 
     if (resultT1.equals(resultT2)) {
       return true;
     } else {
       return false;
-    }
+    } // if... else
   } // equal(TextBlock t1, TextBlock t2)
 
   /**
    * Returns true if two textblocks are built the same way
    */
   static boolean eqv(TextBlock t1, TextBlock t2) {
-    if(t1.getClass().equals(t2.getClass()))
-    return true; 
+    if (t1.getClass().equals(t2.getClass()))
+      return true;
 
     return false;
   } // eq(TextBlock t1, TextBlock t2)
@@ -125,9 +125,21 @@ public class TBUtils {
 
   /**
    * Converts a block to a string
+   * 
+   * @throws Exception
    */
   static String toString(TextBlock block) {
-    String result = "not implemented yet";
+    String result = "";
+
+    for (int i = 0; i < block.height(); i++) {
+      try {
+        for (int j = 0; j < block.row(i).length(); j++) {
+          result += block.row(i).charAt(j);
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
 
     return result;
   }

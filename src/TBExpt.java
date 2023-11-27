@@ -4,7 +4,7 @@ import java.io.PrintWriter;
  * A series of experiments with the text block layout classes.
  * 
  * @author Samuel A. Rebelsky, Joshua De La Rosa
- * @version 1.3 of September 2019
+ * @version 1.4 of Nov 26, 2023
  */
 public class TBExpt {
   // +------+--------------------------------------------------------------
@@ -70,6 +70,12 @@ public class TBExpt {
     BlockOfZeros zeroBlock = new BlockOfZeros(box);
     TBUtils.print(pen, zeroBlock);
 
+    TextBlock testBlock = new TextLine("hello world");
+    Truncated truncatedBlock2 = new Truncated(testBlock, 5);
+
+    String result = TBUtils.toString(truncatedBlock2);
+    System.out.println(result);
+    
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

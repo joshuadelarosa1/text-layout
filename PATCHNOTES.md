@@ -7,6 +7,9 @@ Updates for Redo:
 
 3. Includes intro comments for all the different java files with author, version, and purpose of the file.
 
-4. All files should now compile correctly.
+4. All files should compile correctly.
 
 5. Cleaned up the style a bit.
+
+use this to compile: (DELETE AFTER JOSHUA)
+javac -d ../bin/ ./filename
