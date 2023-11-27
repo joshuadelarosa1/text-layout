@@ -75,7 +75,10 @@ public class TBExpt {
 
     String result = TBUtils.toString(truncatedBlock2);
     System.out.println(result);
-    
+
+    TextBlock testBlock2 = new TextLine("");
+    BoxedBlock box2 = new BoxedBlock(testBlock2);
+    TBUtils.print(pen, box2);
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

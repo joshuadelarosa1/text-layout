@@ -82,8 +82,9 @@ public class TBUtils {
    * Returns true if two textblocks are built the same way
    */
   static boolean eqv(TextBlock t1, TextBlock t2) {
-    if (t1.getClass().equals(t2.getClass()))
+    if (t1.getClass().equals(t2.getClass())) {
       return true;
+    } // if
 
     return false;
   } // eq(TextBlock t1, TextBlock t2)

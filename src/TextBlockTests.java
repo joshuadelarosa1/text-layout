@@ -1,4 +1,6 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
@@ -11,7 +13,13 @@ public class TextBlockTests {
 
   @Test
   public void emptyBlockTest() {
+    TextBlock testBlock = new TextLine("");
+    BoxedBlock box = new BoxedBlock(testBlock);
 
+    String result = TBUtils.toString(box);
+    String expected = "++\n||\n++";
+
+    assertEquals(expected, result);
   } // emptyBlockTest()
 
   @Test
@@ -78,17 +86,49 @@ public class TextBlockTests {
   } // VFTest()
 
   @Test
-  public void equalTest() {
+  public void BOZTest() {
+    TextLine blockLine = new TextLine("hello world");
+    TextBlock block = blockLine;
+    BoxedBlock box = new BoxedBlock(block);
+    BlockOfZeros zeroBlock = new BlockOfZeros(box);
 
+    String result = TBUtils.toString(zeroBlock);
+    String expected = "0000000000000\n0hello world0\n0000000000000";
+
+    assertEquals(expected, result);
+  } // BOZTest()
+
+  @Test
+  public void equalTest() {
+    TextLine testText = new TextLine("hello world");
+    TextLine testComparison = new TextLine("hello world");
+    TextBlock testBox = new BoxedBlock(testText);
+    TextBlock boxComparison = new BoxedBlock(testComparison);
+
+    BoxedBlock box = new BoxedBlock(testBox);
+    Centered centeredBox = new Centered(boxComparison, 21);
+
+    try {
+      assertTrue(TBUtils.equal(box, centeredBox));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   } // equalTest()
 
   @Test
   public void eqvTest() {
+    TextBlock testBlock = new TextLine("hello world");
+    Truncated truncatedBlock = new Truncated(testBlock, 5);
+    BoxedBlock box = new BoxedBlock(truncatedBlock);
 
+    assertFalse(TBUtils.eqv(truncatedBlock, box));
   } // eqvTest()
 
   @Test
   public void eqTest() {
+    TextBlock testBlock = new TextLine("hello world");
+    Truncated truncatedBlock = new Truncated(testBlock, 5);
 
+    assertTrue(TBUtils.eq(truncatedBlock, truncatedBlock));
   } // eqTest()
 } // class TextBlockTests

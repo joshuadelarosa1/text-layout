@@ -10,6 +10,3 @@ Updates for Redo:
 4. All files should compile correctly.
 
 5. Cleaned up the style a bit.
-
-use this to compile: (DELETE AFTER JOSHUA)
-javac -d ../bin/ ./filename
