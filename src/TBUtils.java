@@ -139,6 +139,12 @@ public class TBUtils {
       } catch (Exception e) {
         e.printStackTrace();
       }
+
+      if (i == block.height() - 1) {
+        continue;
+      } else {
+        result += "\n";
+      } // if... else
     }
 
     return result;
