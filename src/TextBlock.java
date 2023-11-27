@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 /**
  * Simple blocks of text for a lab on polymorphism
  * 

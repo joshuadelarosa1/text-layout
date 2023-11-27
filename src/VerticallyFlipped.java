@@ -1,5 +1,9 @@
-package lab.polymorphism;
-
+/**
+ * Vertically flips a text block.
+ * 
+ * @author Joshua De La Rosa
+ * @version 2 of Nov 26, 2023
+ */
 public class VerticallyFlipped implements TextBlock {
 
   // +--------+------------------------------------------------------------

@@ -1,13 +1,19 @@
-package lab.polymorphism;
-
+/**
+ * Creates a block with zeros instead of dashes. Implements TextBlock in order to do this.
+ * 
+ * @author Joshua De La Rosa
+ * @version 1 of November 20, 2023.
+ */
 public class BlockOfZeros implements TextBlock {
 
   // +--------+------------------------------------------------------------
   // | Fields |
   // +--------+
 
+  /*
+   * The text block.
+   */
   TextBlock block;
-
 
   // +--------------+------------------------------------------------------
   // | Constructors |
@@ -35,7 +41,7 @@ public class BlockOfZeros implements TextBlock {
 
     String result = "";
 
-    if(this.block.height() == 1){
+    if (this.block.height() == 1) {
       return this.block.row(i);
     }
 

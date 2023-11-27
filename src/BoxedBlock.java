@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 /**
  * A text block surrounded by a box.
  *

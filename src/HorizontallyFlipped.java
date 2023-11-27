@@ -1,5 +1,9 @@
-package lab.polymorphism;
-
+/**
+ * Creates a new block that flips a TextBlock horiztonally. Implements TextBlock.
+ * 
+ * @author Joshua De La Rosa
+ * @version 2 of 20 Novemeber, 20th
+ */
 public class HorizontallyFlipped implements TextBlock {
 
   // +--------+------------------------------------------------------------

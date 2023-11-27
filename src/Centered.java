@@ -1,10 +1,8 @@
-package lab.polymorphism;
-
 /**
- * Centers a text block based on the given width
+ * Implements TextBlock in order to center a block and the contents inside the box.
  * 
  * @author Joshua De La Rosa
- * @version 1, September 21st, 2023
+ * @version 2 of 20 Novemeber, 20th
  */
 public class Centered implements TextBlock {
 

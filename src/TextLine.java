@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 /**
  * One line of text.
  * 

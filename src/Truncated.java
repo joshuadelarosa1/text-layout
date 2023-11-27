@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 import java.io.PrintWriter;
 
 /**

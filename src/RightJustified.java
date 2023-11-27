@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 /**
  * Right Justifies inputed text blocks
  * 
@@ -13,9 +11,8 @@ public class RightJustified implements TextBlock {
   // +--------+
 
   /**
-   * the text block
+   * The text block
    */
-
   TextBlock block;
 
   /**

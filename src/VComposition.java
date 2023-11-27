@@ -1,5 +1,3 @@
-package lab.polymorphism;
-
 /**
  * The vertical composition of two text blocks.
  * 
